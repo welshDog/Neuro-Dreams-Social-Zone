@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroDreams Social - Platform for Neurodivergent Dreamers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=OpenDyslexic:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Accessibility Controls (Always Visible) -->
+    <div id="accessibility-controls" class="accessibility-controls">
+        <button id="theme-toggle" class="btn btn--sm" aria-label="Toggle dark/light theme">
+            <span id="theme-icon">🌙</span>
+        </button>
+        <button id="font-size-toggle" class="btn btn--sm" aria-label="Increase font size">
+            <span>Aa</span>
+        </button>
+        <button id="animation-toggle" class="btn btn--sm" aria-label="Toggle animations">
+            <span id="animation-icon">⚡</span>
+        </button>
+        <button id="dyslexia-font-toggle" class="btn btn--sm" aria-label="Toggle dyslexia-friendly font">
+            <span>Dy</span>
+        </button>
+    </div>
+
+    <!-- Landing Page -->
+    <div id="landing-page" class="page">
+        <header class="landing-header">
+            <div class="container">
+                <nav class="nav">
+                    <div class="nav-brand">
+                        <h1>🧠 NeuroDreams Social</h1>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main class="landing-main">
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <h2 class="hero-title">Where Neurodivergent Dreams Take Flight</h2>
+                        <p class="hero-subtitle">A social platform designed specifically for ADHD, autistic, and dyslexic creators. Focus better, dream bigger, achieve together.</p>
+                        
+                        <div class="hero-features">
+                            <div class="feature-card">
+                                <span class="feature-icon">🎯</span>
+                                <h3>Focus Mode</h3>
+                                <p>Pomodoro timers and distraction-free environments</p>
+                            </div>
+                            <div class="feature-card">
+                                <span class="feature-icon">✨</span>
+                                <h3>Dream Boards</h3>
+                                <p>Visual canvases for your ideas and goals</p>
+                            </div>
+                            <div class="feature-card">
+                                <span class="feature-icon">🤝</span>
+                                <h3>Hyperfocus Circles</h3>
+                                <p>Small supportive communities of fellow dreamers</p>
+                            </div>
+                        </div>
+
+                        <div class="hero-actions">
+                            <button id="signup-btn" class="btn btn--primary btn--lg">Start Dreaming</button>
+                            <button id="login-btn" class="btn btn--outline btn--lg">Log In</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboard" class="page hidden">
+        <div class="dashboard-layout">
+            <!-- Left Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <h2>🧠 NeuroDreams</h2>
+                    <div class="user-info">
+                        <span class="user-avatar">👨‍💻</span>
+                        <div class="user-details">
+                            <span class="user-name">Alex Chen</span>
+                            <span class="user-type">ADHD Creator</span>
+                            <span class="user-coins">💰 150 BROski Coins</span>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="#" class="nav-item active" data-section="feed">
+                        <span class="nav-icon">🏠</span>
+                        <span class="nav-text">Dream Feed</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="dreams">
+                        <span class="nav-icon">✨</span>
+                        <span class="nav-text">My Dreams</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="circles">
+                        <span class="nav-icon">🤝</span>
+                        <span class="nav-text">Hyperfocus Circles</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="focus">
+                        <span class="nav-icon">🎯</span>
+                        <span class="nav-text">Focus Mode</span>
+                    </a>
+                    <a href="#" class="nav-item" data-section="profile">
+                        <span class="nav-icon">👤</span>
+                        <span class="nav-text">Profile</span>
+                    </a>
+                </nav>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <!-- Feed Section -->
+                <div id="feed-section" class="content-section">
+                    <div class="section-header">
+                        <h2>Dream Feed</h2>
+                        <button id="new-post-btn" class="btn btn--primary">Share Your Progress</button>
+                    </div>
+                    <div id="posts-container" class="posts-container">
+                        <!-- Posts will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- Dreams Section -->
+                <div id="dreams-section" class="content-section hidden">
+                    <div class="section-header">
+                        <h2>My Dreams</h2>
+                        <button id="new-dream-btn" class="btn btn--primary">New Dream Board</button>
+                    </div>
+                    <div id="dreams-container" class="dreams-container">
+                        <!-- Dreams will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- Circles Section -->
+                <div id="circles-section" class="content-section hidden">
+                    <div class="section-header">
+                        <h2>Hyperfocus Circles</h2>
+                        <button id="join-circle-btn" class="btn btn--primary">Join Circle</button>
+                    </div>
+                    <div id="circles-container" class="circles-container">
+                        <!-- Circles will be dynamically inserted here -->
+                    </div>
+                </div>
+
+                <!-- Focus Section -->
+                <div id="focus-section" class="content-section hidden">
+                    <div class="section-header">
+                        <h2>Focus Mode</h2>
+                    </div>
+                    <div class="focus-dashboard">
+                        <div class="focus-stats">
+                            <div class="stat-card">
+                                <h3>Today's Sessions</h3>
+                                <div class="stat-value">3/4</div>
+                                <div class="stat-progress">
+                                    <div class="progress-bar" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <div class="stat-card">
+                                <h3>BROski Coins Earned</h3>
+                                <div class="stat-value">💰 15</div>
+                            </div>
+                        </div>
+                        <button id="start-focus-btn" class="btn btn--primary btn--lg btn--full-width">Start Focus Session</button>
+                    </div>
+                </div>
+
+                <!-- Profile Section -->
+                <div id="profile-section" class="content-section hidden">
+                    <div class="section-header">
+                        <h2>Your Profile</h2>
+                    </div>
+                    <div class="profile-content">
+                        <div class="profile-card">
+                            <div class="profile-avatar">👨‍💻</div>
+                            <h3>Alex Chen</h3>
+                            <p class="profile-type">ADHD Creator</p>
+                            <div class="profile-stats">
+                                <div class="stat">
+                                    <span class="stat-number">3</span>
+                                    <span class="stat-label">Active Dreams</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">150</span>
+                                    <span class="stat-label">BROski Coins</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">2</span>
+                                    <span class="stat-label">Circles Joined</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Sidebar -->
+            <aside class="right-sidebar">
+                <div class="quick-focus">
+                    <h3>Quick Focus</h3>
+                    <div class="focus-timer" id="quick-timer">
+                        <div class="timer-display">25:00</div>
+                        <button id="quick-focus-btn" class="btn btn--secondary btn--sm">Start 25min</button>
+                    </div>
+                </div>
+
+                <div class="active-circles">
+                    <h3>Active Circles</h3>
+                    <div class="circle-list">
+                        <div class="circle-item">
+                            <div class="circle-info">
+                                <strong>ADHD Creators</strong>
+                                <span>Next: Today 3PM</span>
+                            </div>
+                        </div>
+                        <div class="circle-item">
+                            <div class="circle-info">
+                                <strong>Dyslexic Devs</strong>
+                                <span>Next: Tomorrow 10AM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Dream Board Modal -->
+    <div id="dream-board-modal" class="modal hidden">
+        <div class="modal-content modal-content--large">
+            <div class="modal-header">
+                <h2>Dream Board: <span id="dream-board-title">New Dream</span></h2>
+                <button id="close-dream-board" class="btn btn--outline btn--sm">Close</button>
+            </div>
+            <div class="modal-body">
+                <div class="dream-board-toolbar">
+                    <button class="btn btn--sm" data-note-type="idea">💡 Add Idea</button>
+                    <button class="btn btn--sm" data-note-type="goal">🎯 Add Goal</button>
+                    <button class="btn btn--sm" data-note-type="progress">📈 Add Progress</button>
+                    <button class="btn btn--sm" data-note-type="complete">✅ Mark Complete</button>
+                </div>
+                <div id="dream-board-canvas" class="dream-board-canvas">
+                    <!-- Sticky notes will be added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Focus Mode Modal -->
+    <div id="focus-mode-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Focus Mode Active</h2>
+                <button id="close-focus-mode" class="btn btn--outline btn--sm">Exit Focus</button>
+            </div>
+            <div class="modal-body">
+                <div class="focus-timer-large">
+                    <div id="focus-timer-display" class="timer-display-large">25:00</div>
+                    <div class="timer-controls">
+                        <button id="pause-timer" class="btn btn--secondary">Pause</button>
+                        <button id="stop-timer" class="btn btn--outline">Stop</button>
+                    </div>
+                </div>
+                <div class="focus-motivation">
+                    <p>🌟 You're in the zone! Stay focused and earn BROski Coins!</p>
+                    <div class="focus-progress">
+                        <div id="focus-progress-bar" class="progress-bar" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
