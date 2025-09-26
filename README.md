@@ -1,5 +1,9 @@
 # NeuroDreams Social - Complete Documentation & GitHub Pages Setup
 
+[💎⚡ SUPPORT THE HYPERFOCUS EMPIRE ⚡💎 – Donation & Sponsorship Portal](https://welshdog.github.io/hyperfocuszone.com-Support-Hub-/)
+
+> Join our Focus Warriors, Elite Agents, and Empire Builders to power next-gen ADHD-friendly tools!
+
 ## 🚀 Project Overview
 
 **NeuroDreams Social** is a comprehensive social media platform specifically designed for neurodivergent dreamers (ADHD, dyslexia, autism). Built with accessibility-first principles and modern web technologies.
